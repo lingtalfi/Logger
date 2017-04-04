@@ -86,9 +86,14 @@ $log->log("Hello log", "info");
 History Log
 ------------------
     
-- 1.1.0 -- 2017-04-04
+- 1.2.0 -- 2017-04-04
 
     - add AbstractLoggerListener.removeIdentifier method
+    
+
+- 1.1.0 -- 2017-04-04
+
+    - add TagFormatter    
     
     
 - 1.0.0 -- 2017-04-04
