@@ -53,10 +53,42 @@ $log->log("Hello log", "info");
 ```
 
 
+Example with a formatter to display the date:
+
+
+```php
+<?php
+
+
+use Kamille\Architecture\ApplicationParameters\ApplicationParameters;
+use Logger\Formatter\TagFormatter;
+use Logger\Listener\FileLoggerListener;
+use Logger\Logger;
+
+require_once __DIR__ . "/../boot.php";
+require_once __DIR__ . "/../init.php";
+
+
+$appDir = ApplicationParameters::get("app_dir");
+$f = $appDir . "/logs/kamille.log.txt";
+$log = Logger::create()->addListener(FileLoggerListener::create()
+    ->setFormatter(TagFormatter::create())
+    ->setPath($f)->setIdentifiers(['info']));
+
+$log->log("Hello log", "info");
+
+```
+
+
+
 
 
 History Log
 ------------------
+    
+- 1.1.0 -- 2017-04-04
+
+    - add TagFormatter
     
 - 1.0.0 -- 2017-04-04
 
