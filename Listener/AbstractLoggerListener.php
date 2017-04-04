@@ -68,7 +68,7 @@ abstract class AbstractLoggerListener implements LoggerListenerInterface
         return $this;
     }
 
-    public function setIdentifiers(array $identifiers)
+    public function setIdentifiers(array $identifiers = null)
     {
         $this->identifiers = $identifiers;
         return $this;

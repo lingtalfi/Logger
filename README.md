@@ -86,6 +86,10 @@ $log->log("Hello log", "info");
 History Log
 ------------------
     
+- 1.2.1 -- 2017-04-04
+
+    - fix setIdentifiers accepts null
+    
 - 1.2.0 -- 2017-04-04
 
     - add AbstractLoggerListener.removeIdentifier method
