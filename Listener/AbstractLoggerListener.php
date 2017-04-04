@@ -11,6 +11,18 @@ namespace Logger\Listener;
  *
  *
  * This class provides one way of handling that question.
+ * The logic is the following:
+ *
+ *
+ * By default, no identifier will be listened to,
+ * unless you specified some with the setIdentifiers method.
+ *
+ * If you want to listen to all identifiers by default, set the identifiers
+ * to null setIdentifiers(null).
+ *
+ *
+ * From then on, you can use the addIdentifier to add identifiers to the current set of "listened to" identifiers,
+ * and/or the removeIdentifier to remove identifiers to the current set of "listened to" identifiers.
  *
  *
  */
@@ -18,11 +30,13 @@ abstract class AbstractLoggerListener implements LoggerListenerInterface
 {
 
     private $identifiers;
+    private $negativeIdentifiers;
 
 
     public function __construct()
     {
         $this->identifiers = [];
+        $this->negativeIdentifiers = [];
     }
 
     public static function create()
@@ -42,7 +56,15 @@ abstract class AbstractLoggerListener implements LoggerListenerInterface
 
     public function addIdentifier($identifier)
     {
-        $this->identifiers[] = $identifier;
+        if (null !== $this->identifiers) {
+            $this->identifiers[] = $identifier;
+        }
+        return $this;
+    }
+
+    public function removeIdentifier($identifier)
+    {
+        $this->negativeIdentifiers[] = $identifier;
         return $this;
     }
 
@@ -53,13 +75,17 @@ abstract class AbstractLoggerListener implements LoggerListenerInterface
     }
 
 
-
-
     //--------------------------------------------
     //
     //--------------------------------------------
     protected function willListen($identifier)
     {
+        if (in_array($identifier, $this->negativeIdentifiers, true)) {
+            return false;
+        }
+        if (null === $this->identifiers) {
+            return true;
+        }
         return in_array($identifier, $this->identifiers, true);
     }
 }
