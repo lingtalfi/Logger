@@ -8,7 +8,6 @@ class TagFormatter implements FormatterInterface
 {
 
     private $model;
-    private $formattedTags;
 
 
     public static function create()
@@ -46,20 +45,18 @@ class TagFormatter implements FormatterInterface
     //--------------------------------------------
     private function getFormattedTags($msg, $identifier)
     {
-        if (null === $this->formattedTags) {
-            $tags = [
-                "msg" => $msg,
-                "identifier" => $identifier,
-                "date" => date("Y-m-d"),
-                "time" => date("H:i:s"),
-            ];
-            $this->prepareTags($tags);
-            $this->formattedTags = [];
-            foreach ($tags as $tag => $value) {
-                $this->formattedTags['{' . $tag . '}'] = $value;
-            }
-        }
-        return $this->formattedTags;
-    }
+        $formattedTags = [];
+        $tags = [
+            "msg" => $msg,
+            "identifier" => $identifier,
+            "date" => date("Y-m-d"),
+            "time" => date("H:i:s"),
+        ];
+        $this->prepareTags($tags);
 
+        foreach ($tags as $tag => $value) {
+            $formattedTags['{' . $tag . '}'] = $value;
+        }
+        return $formattedTags;
+    }
 }

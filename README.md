@@ -86,6 +86,10 @@ $log->log("Hello log", "info");
 History Log
 ------------------
     
+- 1.2.2 -- 2017-04-05
+
+    - fix TagFormatter in memory tags
+    
 - 1.2.1 -- 2017-04-04
 
     - fix setIdentifiers accepts null
