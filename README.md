@@ -86,6 +86,10 @@ $log->log("Hello log", "info");
 History Log
 ------------------
     
+- 1.3.0 -- 2017-05-30
+
+    - add QuickDebugLoggerListener
+    
 - 1.2.2 -- 2017-04-05
 
     - fix TagFormatter in memory tags
