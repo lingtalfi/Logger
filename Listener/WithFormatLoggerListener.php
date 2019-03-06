@@ -1,11 +1,11 @@
 <?php
 
 
-namespace Logger\Listener;
+namespace Ling\Logger\Listener;
 
 
-use Logger\Formatter\DefaultFormatter;
-use Logger\Formatter\FormatterInterface;
+use Ling\Logger\Formatter\DefaultFormatter;
+use Ling\Logger\Formatter\FormatterInterface;
 
 abstract class WithFormatLoggerListener extends AbstractLoggerListener
 {

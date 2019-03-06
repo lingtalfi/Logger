@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Logger\Formatter;
+namespace Ling\Logger\Formatter;
 
 
 class DefaultFormatter implements FormatterInterface

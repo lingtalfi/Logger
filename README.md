@@ -14,7 +14,7 @@ Install
 ==========
 Using the [uni](https://github.com/lingtalfi/universe-naive-importer) command.
 ```bash
-uni import Logger
+uni import Ling/Logger
 ```
 
 Or just download it and place it where you want otherwise.
@@ -37,8 +37,8 @@ use Kamille\Mvc\Loader\FileLoader;
 use Kamille\Mvc\Position\Position;
 use Kamille\Mvc\Renderer\PhpLayoutRenderer;
 use Kamille\Mvc\Widget\Widget;
-use Logger\Listener\FileLoggerListener;
-use Logger\Logger;
+use Ling\Logger\Listener\FileLoggerListener;
+use Ling\Logger\Logger;
 
 require_once __DIR__ . "/../boot.php";
 require_once __DIR__ . "/../init.php";
@@ -61,9 +61,9 @@ Example with a formatter to display the date:
 
 
 use Kamille\Architecture\ApplicationParameters\ApplicationParameters;
-use Logger\Formatter\TagFormatter;
-use Logger\Listener\FileLoggerListener;
-use Logger\Logger;
+use Ling\Logger\Formatter\TagFormatter;
+use Ling\Logger\Listener\FileLoggerListener;
+use Ling\Logger\Logger;
 
 require_once __DIR__ . "/../boot.php";
 require_once __DIR__ . "/../init.php";

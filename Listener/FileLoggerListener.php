@@ -1,11 +1,11 @@
 <?php
 
 
-namespace Logger\Listener;
+namespace Ling\Logger\Listener;
 
 
-use Bat\FileSystemTool;
-use Logger\Listener\Exception\LoggerListenerException;
+use Ling\Bat\FileSystemTool;
+use Ling\Logger\Listener\Exception\LoggerListenerException;
 
 class FileLoggerListener extends WithFormatLoggerListener
 {

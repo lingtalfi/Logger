@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Logger\Listener;
+namespace Ling\Logger\Listener;
 
 
 class QuickDebugLoggerListener implements LoggerListenerInterface

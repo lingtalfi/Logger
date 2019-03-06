@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Logger;
+namespace Ling\Logger;
 
 
 /**

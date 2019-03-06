@@ -1,10 +1,10 @@
 <?php
 
 
-namespace Logger;
+namespace Ling\Logger;
 
 
-use Logger\Listener\LoggerListenerInterface;
+use Ling\Logger\Listener\LoggerListenerInterface;
 
 class Logger implements LoggerInterface
 {

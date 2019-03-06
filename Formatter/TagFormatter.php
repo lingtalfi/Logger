@@ -1,10 +1,10 @@
 <?php
 
 
-namespace Logger\Formatter;
+namespace Ling\Logger\Formatter;
 
 
-use ArrayToString\ArrayToStringTool;
+use Ling\ArrayToString\ArrayToStringTool;
 
 class TagFormatter implements FormatterInterface
 {
