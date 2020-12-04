@@ -85,7 +85,11 @@ $log->log("Hello log", "info");
 
 History Log
 ------------------
-    
+
+- 1.4.1 -- 2020-12-04
+
+    - Add lpi-deps.byml file
+
 - 1.4.0 -- 2017-11-24
 
     - improve TagFormatter, now handle arrays natively
